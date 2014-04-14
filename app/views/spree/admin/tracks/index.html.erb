@@ -1,0 +1,53 @@
+<%= render :partial => 'spree/admin/shared/product_sub_menu' %>
+
+<%= render :partial => 'spree/admin/shared/product_tabs', :locals => {:current => 'Tracks'} %>
+
+<% if @tracks.any? %>
+
+  <table class="index sortable" data-sortable-link="<%= update_positions_admin_product_tracks_path(@product) %>">
+
+    <colgroup>
+      <col style="width: 5%" />
+      <col style="width: 25%" />
+      <col style="width: 20%" />
+      <col style="width: 20%" />
+      <col style="width: 15%" />
+      <col style="width: 15%" />
+    </colgroup>
+
+    <thead data-hook="tracks_header">
+      <tr>
+        <th colspan="2"><%= Spree.t(:track_order) %></th>
+        <th><%= Spree.t(:isrc) %></th>
+        <th><%= Spree.t(:duration) %></th>
+        <th class="actions"></th>
+      </tr>
+    </thead>
+    <tbody>
+
+
+    <% @tracks.each do |track| %>
+      <tr id="<%= spree_dom_id track %>" data-hook="track_row" class="<%= cycle('odd', 'even')%>">
+        <td class="no-border">
+          <span class="handle"></span>
+        </td>
+        <td><%= track.name %></td>
+        <td class="align-center"><%= track.isrc %></td>
+        <td class="align-center">COMING SOON</td>
+        <td class="actions">
+          <%= link_to_edit(track, :no_text => true) %>
+          &nbsp;
+          <%= link_to_delete(track, :no_text => true) %>
+        </td>
+      </tr>
+    <%end%>
+    </tbody>
+
+  </table>
+
+<% else %>
+  <div class="alpha twelve columns no-objects-found">
+    <%= Spree.t(:no_resource_found, resource: I18n.t(:other, scope: 'activerecord.models.spree/track')) %>,
+    <%= link_to Spree.t(:add_one), spree.new_admin_product_track_path(@product) %>!
+  </div>
+<% end %>
