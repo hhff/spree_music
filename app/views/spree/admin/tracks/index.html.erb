@@ -1,3 +1,9 @@
+<% content_for :page_actions do %>
+  <li id="new_track_link">
+    <%= button_link_to Spree.t(:new_track), new_object_url, { :remote => false, :icon => 'icon-plus', :id => 'admin_new_track' } %>
+  </li>
+<% end if can?(:create, Spree::Product) %>
+
 <%= render :partial => 'spree/admin/shared/product_sub_menu' %>
 
 <%= render :partial => 'spree/admin/shared/product_tabs', :locals => {:current => 'Tracks'} %>
