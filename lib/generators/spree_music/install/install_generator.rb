@@ -14,6 +14,10 @@ module SpreeMusic
         inject_into_file 'vendor/assets/stylesheets/spree/backend/all.css', " *= require spree/backend/spree_music\n", :before => /\*\//, :verbose => true
       end
 
+      def include_seed_data
+        append_file "db/seeds.rb", "\nSpreeMusic::Engine.load_seed if defined?(SpreeMusic)\n"
+      end
+
       def add_migrations
         run 'bundle exec rake railties:install:migrations FROM=spree_music'
       end
