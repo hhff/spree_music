@@ -21,7 +21,7 @@ artist = Spree::Property.create(
 
 
 music_product_prototype = Spree::Prototype.create(
-                            name: 'music_product_prototype'
+                            name: 'Spree_Music_Prototype'
                           )
 
 
@@ -31,11 +31,11 @@ music_product_prototype.properties << artist
 
 # Shipping Stuff
 music_shipping = Spree::ShippingCategory.create(
-          name: 'Music_Product_Shipping'
+          name: 'Spree_Music_Shipping_Category'
         )
 
 music_location = Spree::StockLocation.create(
-          name: 'Music eCom',
+          name: 'Spree_Music_eCom',
           active: true,
           backorderable_default: true,
           propagate_all_variants: true

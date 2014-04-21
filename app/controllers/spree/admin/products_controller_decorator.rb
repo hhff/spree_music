@@ -8,7 +8,7 @@ module Spree
         # prototype.
         if params[:music_product] == "true"
           @product.music_product = true
-          @prototype = Spree::Prototype.find_by_name('music_product_prototype')
+          @prototype = Spree::Prototype.find_by_name('Spree_Music_Prototype')
         end
         super
       end
@@ -18,9 +18,18 @@ module Spree
         # If the newly created product is a music product,
         # automatically create a digital variant.
         if @product.music_product == true
+          artist = params[:product][:artist]
+
           Spree::Variant.create(
             product: @product,
+            # We assume the catalogue number is the
+            # same for all formats.
+            sku: @product.sku
           ).set_option_value('format', 'digital')
+
+          if artist
+            @product.set_property('artist', artist)
+          end
         end
       end
     end

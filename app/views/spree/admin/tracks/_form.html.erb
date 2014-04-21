@@ -1,23 +1,21 @@
 <div data-hook="admin_track_form_fields" class="label-block left six columns alpha">
-  <div data-hook="tracks">
-
-    <div class="field" data-hook="name">
-      <%= f.label :name, Spree.t(:name) %>
-      <%= f.text_field :name, :class => 'fullwidth' %>
-    </div>
+  <div class="field" data-hook="name">
+    <%= f.label :name, Spree.t(:name) %>
 
   </div>
 </div>
 
+<div data-hook="admin_track_form_fields" class="label-block right six columns alpha">
+  <div class="field" data-hook="isrc">
+    <%= f.label :isrc, Spree.t(:isrc) %>
+
+  </div>
+</div>
 
 <div data-hook="admin_track_form_fields" class="label-block right six columns alpha">
-  <div data-hook="tracks">
-
-    <div class="field" data-hook="isrc">
-      <%= f.label :isrc, Spree.t(:isrc) %>
-      <%= f.text_field :isrc, :class => 'fullwidth' %>
-    </div>
-
+  <div data-hook="file" class="field">
+    <%= f.label Spree.t(:filename) %><br>
+    <%= f.file_field :attachment %>
   </div>
 </div>
 
