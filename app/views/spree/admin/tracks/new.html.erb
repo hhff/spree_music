@@ -1,16 +1,9 @@
 <%= render :partial => 'spree/shared/error_messages', :locals => { :target => @track } %>
 
-<%= form_for [:admin, @product, @track], :html => { :multipart => true } do |f| %>
+<%= form_for [:admin, @product, @track] do |f| %>
   <fieldset data-hook="admin_track_new_form">
     <legend align="center"><%= Spree.t(:new_track) %></legend>
-
     <%= render :partial => 'form', :locals => { :f => f } %>
-
-    <div class="form-buttons filter-actions actions" data-hook="buttons">
-      <%= button Spree.t('actions.update'), 'icon-refresh' %>
-      <span class="or"><%= Spree.t(:or) %></span>
-      <%= link_to_with_icon 'icon-remove', Spree.t('actions.cancel'), admin_product_tracks_url(@product), :id => 'cancel_link', :class => 'button' %>
-    </div>
-
+    <%= render :partial => 'spree/admin/shared/new_resource_links' %>
   </fieldset>
 <% end %>

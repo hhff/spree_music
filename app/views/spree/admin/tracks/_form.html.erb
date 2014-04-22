@@ -1,29 +1,25 @@
-<%= fields_for :metadata do |m| %>
-  <fieldset data-hook="admin_track_new_form">
+<div data-hook="admin_track_form_fields" class="label-block left six columns alpha">
+  <div data-hook="tracks">
 
-  <div data-hook="admin_track_form_fields" class="label-block right six columns alpha">
     <div class="field" data-hook="name">
-      <%= m.label :name, Spree.t(:name) %>
-      <%= m.text_field :name %>
+      <%= f.label :name, Spree.t(:name) %>
+      <%= f.text_field :name, :class => 'fullwidth' %>
+      <%= f.error_message_on :name %>
     </div>
-  </div>
 
-
-  <div data-hook="admin_track_form_fields" class="label-block right six columns alpha">
-    <div class="field" data-hook="isrc">
-      <%= m.label :isrc, Spree.t(:isrc) %>
-      <%= m.text_field :isrc %>
-    </div>
-  </div>
-
-  </fieldset>
-<% end %>
-
-<div data-hook="admin_track_form_fields" class="label-block right six columns alpha">
-  <div data-hook="file" class="field">
-    <%= f.label Spree.t(:filename) %><br>
-    <%= f.file_field :attachment %>
   </div>
 </div>
+
+<div data-hook="admin_track_form_fields" class="label-block left six columns alpha">
+  <div data-hook="tracks">
+
+    <div class="field" data-hook="name">
+      <%= f.label :isrc, Spree.t(:isrc) %>
+      <%= f.text_field :isrc, :class => 'fullwidth' %>
+    </div>
+
+  </div>
+</div>
+
 
 <div class="clear"></div>

@@ -36,9 +36,9 @@
         <td class="no-border">
           <span class="handle"></span>
         </td>
-        <td><%= track.metadata.name %></td>
-        <td class="align-center"><%= track.metadata.isrc %></td>
-        <td class="align-center">COMING SOON</td>
+        <td><%= track.name %></td>
+        <td class="align-center"><%= track.isrc %></td>
+        <td class="align-center"><%= track.duration %></td>
         <td class="actions">
           <%= link_to_with_icon 'icon-edit', Spree.t(:edit), edit_admin_product_track_url(@product, track), :no_text => true, :data => {:action => 'edit'} %>
           <%= link_to_delete track, { :url => admin_product_track_url(@product, track), :no_text => true } %>

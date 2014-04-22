@@ -1,12 +1,8 @@
 module Spree
   module Admin
     class TracksController < ResourceController
+      belongs_to 'spree/product', :find_by => :slug
       before_filter :load_data
-
-      def create
-        super
-        @track.metadata = Spree::Metadata.create(metadata_params)
-      end
 
       private
 
@@ -20,10 +16,6 @@ module Spree
 
       def location_after_save
         admin_product_tracks_url(@product)
-      end
-
-      def metadata_params
-        params.require(:metadata).permit!
       end
 
     end
