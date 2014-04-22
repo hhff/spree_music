@@ -1,16 +1,23 @@
-<div data-hook="admin_track_form_fields" class="label-block left six columns alpha">
-  <div class="field" data-hook="name">
-    <%= f.label :name, Spree.t(:name) %>
+<%= fields_for :metadata do |m| %>
+  <fieldset data-hook="admin_track_new_form">
 
+  <div data-hook="admin_track_form_fields" class="label-block right six columns alpha">
+    <div class="field" data-hook="name">
+      <%= m.label :name, Spree.t(:name) %>
+      <%= m.text_field :name %>
+    </div>
   </div>
-</div>
 
-<div data-hook="admin_track_form_fields" class="label-block right six columns alpha">
-  <div class="field" data-hook="isrc">
-    <%= f.label :isrc, Spree.t(:isrc) %>
 
+  <div data-hook="admin_track_form_fields" class="label-block right six columns alpha">
+    <div class="field" data-hook="isrc">
+      <%= m.label :isrc, Spree.t(:isrc) %>
+      <%= m.text_field :isrc %>
+    </div>
   </div>
-</div>
+
+  </fieldset>
+<% end %>
 
 <div data-hook="admin_track_form_fields" class="label-block right six columns alpha">
   <div data-hook="file" class="field">

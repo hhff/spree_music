@@ -36,8 +36,8 @@
         <td class="no-border">
           <span class="handle"></span>
         </td>
-        <td> track.metadata.name </td>
-        <td class="align-center"> TRACK ISRC </td>
+        <td><%= track.metadata.name %></td>
+        <td class="align-center"><%= track.metadata.isrc %></td>
         <td class="align-center">COMING SOON</td>
         <td class="actions">
           <%= link_to_with_icon 'icon-edit', Spree.t(:edit), edit_admin_product_track_url(@product, track), :no_text => true, :data => {:action => 'edit'} %>
