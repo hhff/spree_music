@@ -1,7 +1,7 @@
 SpreeMusic
 ==========
 
-Introduction goes here.
+Spree Music provides your Spree store with functionality for selling Music and music related products, such as tickets and merch.  Suitable for Bands, Record Labels and more.
 
 Installation
 ------------
@@ -9,14 +9,17 @@ Installation
 Add spree_music to your Gemfile:
 
 ```ruby
-gem 'spree_music'
+gem 'spree_digital', :git => 'git://github.com/halo/spree_digital.git', :branch => '2-2-stable'
+gem 'spree_music', :git => 'git://github.com/hhff/spree_music.git', :branch => 'master'
 ```
 
 Bundle your dependencies and run the installation generator:
 
 ```shell
 bundle
+bundle exec rails g spree_digital:install
 bundle exec rails g spree_music:install
+bundle exec rake db:seed
 ```
 
 Testing
@@ -37,4 +40,4 @@ Simply add this require statement to your spec_helper:
 require 'spree_music/factories'
 ```
 
-Copyright (c) 2014 [name of extension creator], released under the New BSD License
+Copyright (c) 2014 Hugh Francis, released under the New BSD License
