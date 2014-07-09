@@ -27,9 +27,8 @@ module Spree
             sku: @product.sku
           ).set_option_value('format', 'digital')
 
-          if artist
-            @product.set_property('artist', artist)
-          end
+          @product.set_property('artist', artist) if artist
+
         end
       end
     end

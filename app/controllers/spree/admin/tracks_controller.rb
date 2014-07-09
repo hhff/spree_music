@@ -3,8 +3,13 @@ module Spree
     class TracksController < ResourceController
       belongs_to 'spree/product', :find_by => :slug
       before_filter :load_data
+      after_filter :zip_audio, :except => [:index, :show, :new, :edit]
 
       private
+
+      def zip_audio
+        @product.zip_audio
+      end
 
       def load_data
         @product = Product.friendly.find(params[:product_id])

@@ -1,6 +1,8 @@
 module SpreeMusic
   class Engine < Rails::Engine
     require 'spree/core'
+    require 'zip'
+
     isolate_namespace Spree
     engine_name 'spree_music'
 

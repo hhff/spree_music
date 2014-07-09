@@ -1,6 +1,14 @@
 SpreeMusic
 ==========
 
+TODO
+- Ensure wav to mp3 converter is saving as .MP3
+
+
+
+
+
+
 Introduction goes here.
 
 Installation
