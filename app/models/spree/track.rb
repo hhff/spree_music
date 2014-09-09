@@ -1,5 +1,7 @@
 module Spree
   class Track < ActiveRecord::Base
+    attr_accessor :buy_seperately
+
     validates :name, presence: true
     belongs_to :product
     validates_attachment_presence :audio
@@ -9,7 +11,7 @@ module Spree
     has_attached_file :audio,
                       url: '/spree/products/:id/:style/:basename.:extension',
                       path: ':rails_root/private/audio/:product_name/:style/:basename.:extension',
-                      styles: { mp3: {} },
+                      styles: { mp3: { format: 'mp3' } },
                       processors: [:ffmpeg_wav_to_mp3]
 
     Paperclip.interpolates :product_name do |attachment, style|

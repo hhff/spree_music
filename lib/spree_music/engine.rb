@@ -6,6 +6,8 @@ module SpreeMusic
     isolate_namespace Spree
     engine_name 'spree_music'
 
+    Spree::PermittedAttributes.product_attributes << :type
+
     # use rspec for tests
     config.generators do |g|
       g.test_framework :rspec

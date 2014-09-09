@@ -5,7 +5,7 @@ class CreateSpreeTracks < ActiveRecord::Migration
       t.string :isrc
       t.integer :duration
       t.integer :position
-      t.references :product
+      t.references :release
 
       t.string :audio_file_name
       t.string :audio_content_type

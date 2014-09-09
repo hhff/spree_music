@@ -43,3 +43,13 @@ require 'spree_music/factories'
 ```
 
 Copyright (c) 2014 Hugh Francis, released under the New BSD License
+
+TODO
+-------
+
+Master Digitals should be available always
+Cover Image should be included in Download Package
+Buy Track Seperately
+Tickets
+Digital Calculator
+Side Jobs for Converting Audio

@@ -58,4 +58,19 @@ music_location = Spree::StockLocation.create(
           propagate_all_variants: true
         )
 
+music_shipping_method = Spree::ShippingMethod.create(
+          name: 'Spree_Shipping_Method',
+          calculator_type: 'Spree::ShippingCalculator::FlatRate',
+          shipping_categories: [music_shipping_category]
+        )
+
+north_america = Spree::Zone.last
+music_shipping_method.zones << north_america
+
+bogus_payment_method = Spree::PaymentMethod.create(
+    name: 'Spree_Music_Bogus_Payment',
+    type: "Spree::Gateway::BogusSimple"
+  )
+
+
 puts 'Finished Seeding Spree Music!'

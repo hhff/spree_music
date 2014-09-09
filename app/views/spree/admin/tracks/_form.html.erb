@@ -24,9 +24,20 @@
 <div data-hook="admin_track_form_fields" class="label-block left six columns alpha">
   <div data-hook="tracks">
     <div data-hook="file" class="field">
-      <%= f.label Spree.t(:audio) %><br>
+      <%= f.label Spree.t(:audio, scope: 'music') %>
       <%= f.file_field :audio %>
     </div>
+  </div>
+</div>
+
+<div data-hook="admin_track_form_fields" class="label-block left six columns alpha">
+  <div data-hook="tracks">
+
+    <div data-hook="file" class="field">
+      <%= f.label Spree.t(:buy_seperately, scope: 'music') %>
+      <%= f.check_box :buy_seperately %>
+    </div>
+
   </div>
 </div>
 

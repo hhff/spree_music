@@ -2,7 +2,6 @@ module Spree
   Product.class_eval do
     attr_accessor :artist
     # validates :artist, presence: true
-
     has_many :tracks,
       -> { order("#{::Spree::Track.quoted_table_name}.position ASC") },
       class_name: 'Spree::Track'
@@ -20,6 +19,7 @@ module Spree
           end
         end
 
+        # TODO fix this
         if self.master.digitals.map(&:attachment_file_name).include? Pathname.new(zipfile_name).basename.to_s
           digital = self.master.digitals.find {|digital| digital["attachment_file_name"] = Pathname.new(zipfile_name).basename.to_s }
           digital.attachment = File.open(zipfile_name)
