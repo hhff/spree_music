@@ -47,9 +47,11 @@ Copyright (c) 2014 Hugh Francis, released under the New BSD License
 TODO
 -------
 
+Product Decorator stuff should be moved to release.rb
+Implement audio.js in admin & frontend
 Master Digitals should be available always
 Cover Image should be included in Download Package
-Buy Track Seperately
+Buy Track Seperately (single.rb < spree::product)
 Tickets
 Digital Calculator
 Side Jobs for Converting Audio

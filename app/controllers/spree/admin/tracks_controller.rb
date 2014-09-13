@@ -3,7 +3,7 @@ module Spree
     class TracksController < ResourceController
       belongs_to 'spree/product', :find_by => :slug
       before_filter :load_data
-      after_filter :zip_audio, :except => [:index, :show, :new, :edit]
+      # after_filter :zip_audio, :except => [:index, :show, :new, :edit]
 
       private
 

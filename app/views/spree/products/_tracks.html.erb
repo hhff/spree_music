@@ -7,6 +7,9 @@
         <tr class="<%= css_class %>">
           <td><%= index + 1 %></td>
           <td><strong><%= track.name %></strong></td>
+          <% if track.single.available? %>
+            <td><%= link_to Spree.t(:buy_separately), product_url(track.single) %></td>
+          <% end %>
         </tr>
       <% end %>
       <% reset_cycle('tracks') %>

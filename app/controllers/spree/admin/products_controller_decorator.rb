@@ -3,9 +3,6 @@ module Spree
     ProductsController.class_eval do
 
       def new
-        # If we pass :release == true, set that variable
-        # on the new model, and set the prototype to the music
-        # prototype.
         if params[:release] == "true"
           @product = @product.becomes Release
           @product.type = @product.class.name
@@ -16,18 +13,15 @@ module Spree
 
       def create
         super
-        set_artist
+        set_artist if @product.class == Spree::Release
       end
 
       protected
 
       def set_artist
-        if @product.class == Spree::Release
-          artist = params[:product][:artist]
-          @product.set_property('artist', artist) if artist
-        end
+        artist = params[:product][:artist]
+        @product.set_property('artist', artist) if artist
       end
-
     end
   end
 end

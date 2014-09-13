@@ -18,7 +18,11 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'spree_core', '~> 2.2.0'
   s.add_dependency 'rubyzip'
+
   s.add_dependency 'paperclip-wav-mp3'
+  s.add_dependency 'sidekiq'
+  s.add_dependency 'delayed_paperclip'
+  s.add_dependency 'sinatra'
 
   s.add_development_dependency 'capybara', '~> 2.1'
   s.add_development_dependency 'coffee-rails'

@@ -2,11 +2,16 @@ module Spree
   class Release < Spree::Product
     after_create :setup_digital_variant
 
+    has_many :tracks,
+      -> { order("#{::Spree::Track.quoted_table_name}.position ASC") },
+      class_name: 'Spree::Track'
+
+    attr_accessor :artist
+    validates :artist, presence: true
+
     def setup_digital_variant
       Spree::Variant.create(
         product: self,
-        # We assume the catalogue number is the
-        # same for all formats.
         sku: self.sku
       ).set_option_value('format', 'digital')
     end

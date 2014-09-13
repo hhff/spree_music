@@ -5,7 +5,9 @@ en:
   spree:
     music:
       audio: Audio
-      buy_seperately: Buy Seperately
+      buy_separately: Buy Separately
+      available_separately: Available Separately
+      individual_price: Individual Price
 
   activerecord:
     models:
